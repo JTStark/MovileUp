@@ -14,50 +14,112 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="XSN-Bt-b6x" kind="relationship" relationship="rootViewController" id="Ez9-Vo-M7R"/>
+                        <segue destination="Yf0-4I-f1b" kind="relationship" relationship="rootViewController" id="jBs-bE-N1h"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fbs-ji-aVP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="345" y="380"/>
         </scene>
+        <!--Season Screen View Controller-->
+        <scene sceneID="0rD-Kj-nvO">
+            <objects>
+                <viewController id="Yf0-4I-f1b" customClass="SeasonScreenViewController" customModule="MovileUp15_07" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oNP-Wc-LMI"/>
+                        <viewControllerLayoutGuide type="bottom" id="KXQ-l9-qFh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="quS-pI-Htx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="nAW-gU-N6t">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="hE9-EZ-aKn" detailTextLabel="NPa-ux-lvm" style="IBUITableViewCellStyleSubtitle" id="e9Y-Xc-Ean" customClass="EpisodeCellViewController" customModule="MovileUp15_07" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="e9Y-Xc-Ean" id="6Dl-p5-GPv">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hE9-EZ-aKn">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.80952099116161613" green="0.80952099116161613" blue="0.80952099116161613" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NPa-ux-lvm">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="EpNumb" destination="hE9-EZ-aKn" id="grW-0c-AmV"/>
+                                            <outlet property="EpTitle" destination="NPa-ux-lvm" id="fiU-hG-Zxr"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Yf0-4I-f1b" id="wnP-GY-TPS"/>
+                                    <outlet property="delegate" destination="Yf0-4I-f1b" id="Okp-6r-HWT"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nAW-gU-N6t" firstAttribute="leading" secondItem="quS-pI-Htx" secondAttribute="leading" id="BeT-zP-ncQ"/>
+                            <constraint firstItem="KXQ-l9-qFh" firstAttribute="top" secondItem="nAW-gU-N6t" secondAttribute="bottom" id="NAo-C8-7YO"/>
+                            <constraint firstItem="nAW-gU-N6t" firstAttribute="top" secondItem="quS-pI-Htx" secondAttribute="top" id="SYv-Ah-WMb"/>
+                            <constraint firstAttribute="trailing" secondItem="nAW-gU-N6t" secondAttribute="trailing" id="xAr-3N-u1q"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="fUg-In-cUd"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hbl-RS-7rc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="911" y="380"/>
+        </scene>
         <!--Episode 1-->
         <scene sceneID="K9V-XM-f6b">
             <objects>
-                <viewController id="XSN-Bt-b6x" sceneMemberID="viewController">
+                <viewController id="XSN-Bt-b6x" customClass="EpisodeScreenViewController" customModule="MovileUp15_07" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="G7f-s1-hEh"/>
                         <viewControllerLayoutGuide type="bottom" id="ftO-Rw-caV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Wdu-ey-qX2">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow2_hg7s" translatesAutoresizingMaskIntoConstraints="NO" id="pV1-wH-as5">
-                                <rect key="frame" x="0.0" y="64" width="320" height="200"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="arrow2_hg7s" translatesAutoresizingMaskIntoConstraints="NO" id="pV1-wH-as5">
+                                <rect key="frame" x="0.0" y="64" width="600" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="2hb-5o-891"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pilot" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IZP-x6-val">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Pilot" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IZP-x6-val">
                                 <rect key="frame" x="13" y="221" width="48.5" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="QuF-P8-O7T">
-                                <rect key="frame" x="13" y="300" width="294" height="255"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="QuF-P8-O7T">
+                                <rect key="frame" x="13" y="303" width="574" height="252"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">After a violent shipwreck, billionaire playboy Oliver Queen was missing and presumed dead for five years before being discovered alive on a remote island in the Pacific. Back in Starling City, Oliver slowly reconnects with those closest to him. 
+                                <string key="text">After a violent shipwreck, billionaire playboy Oliver Queen was missing and presumed dead for five years before being discovered alive on a remote island in the Pacific. Back in Starling City, Oliver slowly reconnects with those closest to him. 
 
 Oliver has brought back many new skills from his time on the island and despite the watchful eye of his new bodyguard John Diggle, Oliver manages to secretly create the persona of Arrow -- a vigilante -- to right the wrongs of his family and fight the ills of society. 
 
-As Arrow, Oliver will atone for the past sins of his family while he searches for the personal redemption he needs.</mutableString>
+As Arrow, Oliver will atone for the past sins of his family while he searches for the personal redemption he needs.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OVERVIEW" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aq5-EZ-aNt">
-                                <rect key="frame" x="13" y="279" width="67.5" height="16"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="OVERVIEW" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aq5-EZ-aNt">
+                                <rect key="frame" x="13" y="277" width="67.5" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" red="1" green="0.60851760199158811" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -70,14 +132,20 @@ As Arrow, Oliver will atone for the past sins of his family while he searches fo
                             <constraint firstItem="aq5-EZ-aNt" firstAttribute="leading" secondItem="Wdu-ey-qX2" secondAttribute="leading" constant="13" id="9eA-U3-c71"/>
                             <constraint firstItem="IZP-x6-val" firstAttribute="bottom" secondItem="pV1-wH-as5" secondAttribute="bottom" constant="-13" id="N39-OZ-IwD"/>
                             <constraint firstItem="QuF-P8-O7T" firstAttribute="leading" secondItem="Wdu-ey-qX2" secondAttribute="leading" constant="13" id="R4E-g7-9Mf"/>
-                            <constraint firstItem="aq5-EZ-aNt" firstAttribute="top" secondItem="pV1-wH-as5" secondAttribute="bottom" constant="15" id="TZ3-qY-RRe"/>
+                            <constraint firstItem="aq5-EZ-aNt" firstAttribute="top" secondItem="pV1-wH-as5" secondAttribute="bottom" constant="13" id="TZ3-qY-RRe"/>
                             <constraint firstItem="pV1-wH-as5" firstAttribute="top" secondItem="G7f-s1-hEh" secondAttribute="bottom" id="VYP-PD-wVn"/>
                             <constraint firstAttribute="trailing" secondItem="pV1-wH-as5" secondAttribute="trailing" id="Wki-h8-ZTT"/>
                             <constraint firstItem="pV1-wH-as5" firstAttribute="leading" secondItem="Wdu-ey-qX2" secondAttribute="leading" id="Zra-JD-6Rd"/>
                             <constraint firstItem="IZP-x6-val" firstAttribute="leading" secondItem="Wdu-ey-qX2" secondAttribute="leading" constant="13" id="ahf-Si-Ur5"/>
                             <constraint firstAttribute="trailing" secondItem="QuF-P8-O7T" secondAttribute="trailing" constant="13" id="ajo-MJ-0Mq"/>
+                            <constraint firstItem="QuF-P8-O7T" firstAttribute="top" secondItem="aq5-EZ-aNt" secondAttribute="bottom" constant="10" id="kJJ-Hn-6f6"/>
                             <constraint firstItem="QuF-P8-O7T" firstAttribute="top" secondItem="pV1-wH-as5" secondAttribute="bottom" constant="36" id="wvE-4N-sgO"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="wvE-4N-sgO"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Episode 1" id="a0d-wf-FK7">
                         <barButtonItem key="backBarButtonItem" title="Season 1" id="F90-ln-oLl"/>
@@ -85,10 +153,15 @@ As Arrow, Oliver will atone for the past sins of his family while he searches fo
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="overviewImageView" destination="pV1-wH-as5" id="h6i-K2-UYf"/>
+                        <outlet property="overviewLabelView" destination="IZP-x6-val" id="fw2-gt-3RO"/>
+                        <outlet property="overviewTextView" destination="QuF-P8-O7T" id="Da4-fS-aFM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SPI-zK-a1m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="856" y="383"/>
+            <point key="canvasLocation" x="1586" y="-100"/>
         </scene>
     </scenes>
     <resources>

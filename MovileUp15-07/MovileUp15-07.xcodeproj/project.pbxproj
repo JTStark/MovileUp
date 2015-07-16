@@ -9,8 +9,12 @@
 /* Begin PBXBuildFile section */
 		4D69D45D9A4F534C1D7FF556 /* LaunchScreen.xib in Sources */ = {isa = PBXBuildFile; fileRef = 54860A32C83E863A2BB63B8E /* LaunchScreen.xib */; };
 		590A95326745E398C054D248 /* Pods_unit_tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 480B23423B5503E40C4A5B16 /* Pods_unit_tests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		813AFF0A1B58361400FA55F3 /* SeasonScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813AFF091B58361400FA55F3 /* SeasonScreenViewController.swift */; };
+		813AFF0C1B5844FA00FA55F3 /* EpisodeCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813AFF0B1B5844FA00FA55F3 /* EpisodeCellViewController.swift */; };
+		813AFF0E1B58483B00FA55F3 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813AFF0D1B58483B00FA55F3 /* Episode.swift */; };
 		814C6BFF1B56EA3E002C8262 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814C6BFE1B56EA3E002C8262 /* CustomNavigationController.swift */; };
 		81B4465E1586570269330728 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B4CECB7F4AEA98FC0140424 /* Images.xcassets */; };
+		81C4444F1B5830AF00C6271B /* EpisodeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C4444E1B5830AF00C6271B /* EpisodeScreenViewController.swift */; };
 		97AE7B29754FDA46B625F4F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EC83009BDE7BA089D84777A /* Foundation.framework */; };
 		AFDDAC57697F3BFFF7A5385C /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A93B249928A9EFB0941B076 /* Storyboards.swift */; };
 		CE953DB4D673FA02BC2346FD /* Main.storyboard in Sources */ = {isa = PBXBuildFile; fileRef = C4613BA2DBADE308E2984CC4 /* Main.storyboard */; };
@@ -35,7 +39,11 @@
 		5EC83009BDE7BA089D84777A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		6B2316D95AE3583133ADDB9A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6F37F24BE173E600C4ACF837 /* Pods-unit_tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-unit_tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-unit_tests/Pods-unit_tests.debug.xcconfig"; sourceTree = "<group>"; };
+		813AFF091B58361400FA55F3 /* SeasonScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeasonScreenViewController.swift; sourceTree = "<group>"; };
+		813AFF0B1B5844FA00FA55F3 /* EpisodeCellViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpisodeCellViewController.swift; sourceTree = "<group>"; };
+		813AFF0D1B58483B00FA55F3 /* Episode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
 		814C6BFE1B56EA3E002C8262 /* CustomNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
+		81C4444E1B5830AF00C6271B /* EpisodeScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpisodeScreenViewController.swift; sourceTree = "<group>"; };
 		8B4CECB7F4AEA98FC0140424 /* Images.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9A93B249928A9EFB0941B076 /* Storyboards.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
 		B71FB05A8A51F60852B93D4E /* MovileUp15-07.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MovileUp15-07.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -185,6 +193,9 @@
 			isa = PBXGroup;
 			children = (
 				814C6BFE1B56EA3E002C8262 /* CustomNavigationController.swift */,
+				81C4444E1B5830AF00C6271B /* EpisodeScreenViewController.swift */,
+				813AFF091B58361400FA55F3 /* SeasonScreenViewController.swift */,
+				813AFF0B1B5844FA00FA55F3 /* EpisodeCellViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -235,6 +246,7 @@
 		FE7FF5B09F558A9F34E80E59 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				813AFF0D1B58483B00FA55F3 /* Episode.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -424,10 +436,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81C4444F1B5830AF00C6271B /* EpisodeScreenViewController.swift in Sources */,
 				FE541B67354EC4510091E921 /* AppDelegate.swift in Sources */,
+				813AFF0C1B5844FA00FA55F3 /* EpisodeCellViewController.swift in Sources */,
 				814C6BFF1B56EA3E002C8262 /* CustomNavigationController.swift in Sources */,
 				AFDDAC57697F3BFFF7A5385C /* Storyboards.swift in Sources */,
 				CE953DB4D673FA02BC2346FD /* Main.storyboard in Sources */,
+				813AFF0A1B58361400FA55F3 /* SeasonScreenViewController.swift in Sources */,
+				813AFF0E1B58483B00FA55F3 /* Episode.swift in Sources */,
 				4D69D45D9A4F534C1D7FF556 /* LaunchScreen.xib in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
