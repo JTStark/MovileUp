@@ -33,7 +33,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow2_hg7s" translatesAutoresizingMaskIntoConstraints="NO" id="pV1-wH-as5">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow2_hg7s" translatesAutoresizingMaskIntoConstraints="NO" id="pV1-wH-as5">
                                 <rect key="frame" x="0.0" y="64" width="320" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="2hb-5o-891"/>
@@ -69,13 +69,13 @@ As Arrow, Oliver will atone for the past sins of his family while he searches fo
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="IZP-x6-val" secondAttribute="trailing" constant="13" id="90E-v8-2Lw"/>
                             <constraint firstItem="aq5-EZ-aNt" firstAttribute="leading" secondItem="Wdu-ey-qX2" secondAttribute="leading" constant="13" id="9eA-U3-c71"/>
                             <constraint firstItem="IZP-x6-val" firstAttribute="bottom" secondItem="pV1-wH-as5" secondAttribute="bottom" constant="-13" id="N39-OZ-IwD"/>
+                            <constraint firstItem="QuF-P8-O7T" firstAttribute="leading" secondItem="Wdu-ey-qX2" secondAttribute="leading" constant="13" id="R4E-g7-9Mf"/>
                             <constraint firstItem="aq5-EZ-aNt" firstAttribute="top" secondItem="pV1-wH-as5" secondAttribute="bottom" constant="15" id="TZ3-qY-RRe"/>
                             <constraint firstItem="pV1-wH-as5" firstAttribute="top" secondItem="G7f-s1-hEh" secondAttribute="bottom" id="VYP-PD-wVn"/>
                             <constraint firstAttribute="trailing" secondItem="pV1-wH-as5" secondAttribute="trailing" id="Wki-h8-ZTT"/>
                             <constraint firstItem="pV1-wH-as5" firstAttribute="leading" secondItem="Wdu-ey-qX2" secondAttribute="leading" id="Zra-JD-6Rd"/>
                             <constraint firstItem="IZP-x6-val" firstAttribute="leading" secondItem="Wdu-ey-qX2" secondAttribute="leading" constant="13" id="ahf-Si-Ur5"/>
                             <constraint firstAttribute="trailing" secondItem="QuF-P8-O7T" secondAttribute="trailing" constant="13" id="ajo-MJ-0Mq"/>
-                            <constraint firstItem="QuF-P8-O7T" firstAttribute="leading" secondItem="Wdu-ey-qX2" secondAttribute="leading" constant="13" id="nda-0O-lsI"/>
                             <constraint firstItem="QuF-P8-O7T" firstAttribute="top" secondItem="pV1-wH-as5" secondAttribute="bottom" constant="36" id="wvE-4N-sgO"/>
                         </constraints>
                     </view>
