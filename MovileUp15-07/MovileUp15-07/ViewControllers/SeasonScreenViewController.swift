@@ -13,12 +13,13 @@ class SeasonScreenViewController: UIViewController, UITableViewDataSource, UITab
     let eps = Episode.allEpisodes()
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return eps.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
-        cell.textLabel?.text = "\(indexPath.section) - \(indexPath.row)"
+        let cell = tableView.dequeueReusableCellWithIdentifier(Reusable.Cell.identifier!, forIndexPath: indexPath) as! EpisodeCellViewController
+        
+        cell.loadEp(eps[indexPath.row])
         
         return cell
     }

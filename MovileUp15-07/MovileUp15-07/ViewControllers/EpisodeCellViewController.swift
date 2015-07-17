@@ -20,12 +20,12 @@ class EpisodeCellViewController: UITableViewCell {
     }
     
     func loadEp(ep: Episode) {
-        if ep.number < 10 {
-            epNumb.text = "S01E0\(ep.number)"
-        } else {
-            epNumb.text = "S01E\(ep.number)"
-        }
+        let formatter = NSNumberFormatter()
+        formatter.minimumIntegerDigits = 2
         
+        if let number = formatter.stringFromNumber(ep.number) {
+            epNumb.text = "S01E" + number
+        }
         epTitle.text = ep.name
     }
 }

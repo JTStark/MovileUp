@@ -6,13 +6,14 @@ inhibit_all_warnings!
 use_frameworks!
 
 target 'MovileUp15-07', :exclusive => true do
-    # Add Application pods here
-    
+    pod 'Alamofire'
+    pod 'Result'
+    pod 'TraktModels', :git => 'https://github.com/marcelofabri/TraktModels.git'
 end
 
 target :unit_tests, :exclusive => true do
-  link_with 'UnitTests'
-  pod 'Nimble'
-  pod 'OHHTTPStubs'
+    link_with 'UnitTests'
+    pod 'Nimble'
+    pod 'OHHTTPStubs'
 end
 

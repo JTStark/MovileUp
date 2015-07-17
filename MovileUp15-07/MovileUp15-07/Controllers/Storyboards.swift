@@ -167,4 +167,68 @@ extension UITableView {
 
 //MARK: - CustomNavigationController
 
+//MARK: - ShowsCollectionScreenViewController
+extension ShowsCollectionScreenViewController { 
+
+    enum Reusable: String, Printable, ReusableViewProtocol {
+        case CollectionCell = "CollectionCell"
+
+        var kind: ReusableKind? {
+            switch (self) {
+            case CollectionCell:
+                return ReusableKind(rawValue: "collectionViewCell")
+            default:
+                preconditionFailure("Invalid value")
+                break
+            }
+        }
+
+        var viewType: UIView.Type? {
+            switch (self) {
+            case CollectionCell:
+                return ShowCollectionCellViewController.self
+            default:
+                return nil
+            }
+        }
+
+        var identifier: String? { return self.description } 
+        var description: String { return self.rawValue }
+    }
+
+}
+
+
+//MARK: - SeasonScreenViewController
+extension SeasonScreenViewController { 
+
+    enum Reusable: String, Printable, ReusableViewProtocol {
+        case Cell = "Cell"
+
+        var kind: ReusableKind? {
+            switch (self) {
+            case Cell:
+                return ReusableKind(rawValue: "tableViewCell")
+            default:
+                preconditionFailure("Invalid value")
+                break
+            }
+        }
+
+        var viewType: UIView.Type? {
+            switch (self) {
+            case Cell:
+                return EpisodeCellViewController.self
+            default:
+                return nil
+            }
+        }
+
+        var identifier: String? { return self.description } 
+        var description: String { return self.rawValue }
+    }
+
+}
+
+
 //MARK: - EpisodeScreenViewController
