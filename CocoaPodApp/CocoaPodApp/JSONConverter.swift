@@ -27,6 +27,29 @@ class JSONConverter {
         return nil
     }
     
+//    static func decode(j: AnyObject?) -> Entry?
     
-    
+    func convertDicInVec(dic: NSDictionary?) -> [Entry]? {
+        if dic == nil {
+            return nil
+        }
+        
+        var vec: [Entry] = []
+        var aux: Entry
+        
+        if let respData = dic["responseData"] as? NSDictionary, feed = respData["feed"] as? NSDictionary, entries = feed["entries"] as? [NSDictionary]{
+            
+            for x in dic["responseData"]["feed"]["entries"] {
+                aux.content = x["content"]
+                aux.contentSnippet = x["contentSnippet"]
+                aux.link = x["link"]
+                aux.publishedDate = x["publishedDate"]
+                aux.title = x["title"]
+                
+                vec.append(aux)
+            }
+        }
+        
+        return vec
+    }
 }

@@ -12,6 +12,7 @@ struct Entry {
     let content: String
     let contentSnippet: String
     let link: String
-    let publishedDate: Date
+//    let publishedDate: Date
+    let publishedDate: String
     let title: String
 }
