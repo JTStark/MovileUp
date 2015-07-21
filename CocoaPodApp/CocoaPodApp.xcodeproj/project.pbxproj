@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		814DABEB1B5EB31B0019250F /* CustomCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814DABEA1B5EB31B0019250F /* CustomCellViewController.swift */; };
+		814DABED1B5EC7AA0019250F /* CustomTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814DABEC1B5EC7AA0019250F /* CustomTableViewController.swift */; };
+		814DABF01B5EC92A0019250F /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814DABEF1B5EC92A0019250F /* Storyboards.swift */; };
 		814F5F4A1B5D696B007D2F0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814F5F491B5D696B007D2F0C /* AppDelegate.swift */; };
 		814F5F4C1B5D696B007D2F0C /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814F5F4B1B5D696B007D2F0C /* MasterViewController.swift */; };
 		814F5F4E1B5D696B007D2F0C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814F5F4D1B5D696B007D2F0C /* DetailViewController.swift */; };
@@ -14,7 +17,6 @@
 		814F5F531B5D696B007D2F0C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 814F5F521B5D696B007D2F0C /* Images.xcassets */; };
 		814F5F561B5D696B007D2F0C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 814F5F541B5D696B007D2F0C /* LaunchScreen.xib */; };
 		814F5F621B5D696B007D2F0C /* CocoaPodAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814F5F611B5D696B007D2F0C /* CocoaPodAppTests.swift */; };
-		814F5F6D1B5D6A68007D2F0C /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814F5F6C1B5D6A68007D2F0C /* Date.swift */; };
 		814F5F6F1B5D6B3B007D2F0C /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814F5F6E1B5D6B3B007D2F0C /* Entry.swift */; };
 		814F5F711B5D7150007D2F0C /* JSONConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814F5F701B5D7150007D2F0C /* JSONConverter.swift */; };
 		814F5F751B5D79B7007D2F0C /* new-pods.json in Resources */ = {isa = PBXBuildFile; fileRef = 814F5F741B5D79B7007D2F0C /* new-pods.json */; };
@@ -31,6 +33,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		814DABEA1B5EB31B0019250F /* CustomCellViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCellViewController.swift; sourceTree = "<group>"; };
+		814DABEC1B5EC7AA0019250F /* CustomTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewController.swift; sourceTree = "<group>"; };
+		814DABEF1B5EC92A0019250F /* Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
 		814F5F441B5D696B007D2F0C /* CocoaPodApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoaPodApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		814F5F481B5D696B007D2F0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		814F5F491B5D696B007D2F0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -42,7 +47,6 @@
 		814F5F5B1B5D696B007D2F0C /* CocoaPodAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CocoaPodAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		814F5F601B5D696B007D2F0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		814F5F611B5D696B007D2F0C /* CocoaPodAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocoaPodAppTests.swift; sourceTree = "<group>"; };
-		814F5F6C1B5D6A68007D2F0C /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		814F5F6E1B5D6B3B007D2F0C /* Entry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		814F5F701B5D7150007D2F0C /* JSONConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONConverter.swift; sourceTree = "<group>"; };
 		814F5F741B5D79B7007D2F0C /* new-pods.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "new-pods.json"; sourceTree = "<group>"; };
@@ -66,6 +70,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		814DABE91B5EB2FD0019250F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				814DABEA1B5EB31B0019250F /* CustomCellViewController.swift */,
+				814DABEC1B5EC7AA0019250F /* CustomTableViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
 		814F5F3B1B5D696B007D2F0C = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +100,8 @@
 		814F5F461B5D696B007D2F0C /* CocoaPodApp */ = {
 			isa = PBXGroup;
 			children = (
+				814DABEF1B5EC92A0019250F /* Storyboards.swift */,
+				814DABE91B5EB2FD0019250F /* ViewControllers */,
 				814F5F731B5D79B7007D2F0C /* Resources */,
 				814F5F721B5D7157007D2F0C /* Model */,
 				814F5F491B5D696B007D2F0C /* AppDelegate.swift */,
@@ -128,7 +143,6 @@
 		814F5F6B1B5D69D2007D2F0C /* Structs */ = {
 			isa = PBXGroup;
 			children = (
-				814F5F6C1B5D6A68007D2F0C /* Date.swift */,
 				814F5F6E1B5D6B3B007D2F0C /* Entry.swift */,
 			);
 			name = Structs;
@@ -158,6 +172,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 814F5F651B5D696B007D2F0C /* Build configuration list for PBXNativeTarget "CocoaPodApp" */;
 			buildPhases = (
+				814DABEE1B5EC8100019250F /* ShellScript */,
 				814F5F401B5D696B007D2F0C /* Sources */,
 				814F5F411B5D696B007D2F0C /* Frameworks */,
 				814F5F421B5D696B007D2F0C /* Resources */,
@@ -247,17 +262,35 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		814DABEE1B5EC8100019250F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "echo \"Natalie generator\"\n\nNATALIE_PATH=\"/usr/local/bin/natalie.swift\"\n\nif [ -f $NATALIE_PATH ]\nthen\n$NATALIE_PATH \"$PROJECT_DIR/$PROJECT_NAME\" > \"$PROJECT_DIR/$PROJECT_NAME/Storyboards.swift\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		814F5F401B5D696B007D2F0C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				814DABF01B5EC92A0019250F /* Storyboards.swift in Sources */,
 				814F5F6F1B5D6B3B007D2F0C /* Entry.swift in Sources */,
+				814DABEB1B5EB31B0019250F /* CustomCellViewController.swift in Sources */,
 				814F5F4E1B5D696B007D2F0C /* DetailViewController.swift in Sources */,
 				814F5F711B5D7150007D2F0C /* JSONConverter.swift in Sources */,
 				814F5F4C1B5D696B007D2F0C /* MasterViewController.swift in Sources */,
+				814DABED1B5EC7AA0019250F /* CustomTableViewController.swift in Sources */,
 				814F5F4A1B5D696B007D2F0C /* AppDelegate.swift in Sources */,
-				814F5F6D1B5D6A68007D2F0C /* Date.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
