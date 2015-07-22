@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Show {
+struct OldShow {
     let title: String
     let year: String
     let imageName: String

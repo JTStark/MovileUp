@@ -10,7 +10,7 @@ import UIKit
 
 class SeasonScreenViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    let eps = Episode.allEpisodes()
+    let eps = OldEpisode.allEpisodes()
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return eps.count

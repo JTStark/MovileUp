@@ -8,11 +8,11 @@
 
 import Foundation
 
-struct Episode {
+struct OldEpisode {
     let number: Int
     let name: String
     
-    static func allEpisodes() -> [Episode] {
+    static func allEpisodes() -> [OldEpisode] {
         let eps = [(1, "Pilot"),
                    (2, "Honor Thy Father"),
                    (3, "Lone Gunmen"),
@@ -25,6 +25,6 @@ struct Episode {
                    (10, "Burned"),
                    (11, "Vertigo"),]
         
-        return eps.map { Episode(number: $0.0, name: $0.1) }
+        return eps.map { OldEpisode(number: $0.0, name: $0.1) }
     }
 }

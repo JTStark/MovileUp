@@ -19,7 +19,7 @@ class EpisodeCellViewController: UITableViewCell {
         // Initialization code
     }
     
-    func loadEp(ep: Episode) {
+    func loadEp(ep: OldEpisode) {
         let formatter = NSNumberFormatter()
         formatter.minimumIntegerDigits = 2
         
