@@ -7,20 +7,41 @@
 //
 
 import UIKit
+import TraktModels
 
 class SeasonScreenViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    let eps = OldEpisode.allEpisodes()
+    //let eps = OldEpisode.allEpisodes()
+    private let httpClient = TraktHTTPClient()
+    var episodes: [Episode]?
+    var show: Show?
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    func loadEpisodes(){
+        httpClient.getEpisodes(show!.identifiers.slug!, season: 1) { [weak self] result in
+            if let eps = result.value {
+                self?.episodes = eps
+                self?.tableView.reloadData()
+            }
+        }
+    }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return eps.count
+        loadEpisodes()
+        if let eps = episodes{
+            return eps.count
+        }
+        return 0
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(Reusable.Cell.identifier!, forIndexPath: indexPath) as! EpisodeCellViewController
         
-        cell.loadEp(eps[indexPath.row])
-        
+        loadEpisodes()
+        if let eps = episodes {
+            cell.loadEp(eps[indexPath.row])
+        }
         return cell
     }
     

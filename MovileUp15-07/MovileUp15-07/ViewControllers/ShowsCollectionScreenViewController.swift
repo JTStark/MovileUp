@@ -7,10 +7,23 @@
 //
 
 import UIKit
+import TraktModels
 
 class ShowsCollectionScreenViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
-//  let shows = Show.loadShows
+    private let httpClient = TraktHTTPClient()
+    private var shows: [Show]?
+    
+    @IBOutlet weak var collView: UICollectionView!
+    
+    func loadPopShows(){
+        httpClient.getPopularShows { [weak self] result in
+            if let series = result.value {
+                self?.shows = series
+                self?.collView.reloadData()
+            }
+        }
+    }
     
     func collectionView(collectionView: UICollectionView,
         layout collectionViewLayout: UICollectionViewLayout,
@@ -30,16 +43,30 @@ class ShowsCollectionScreenViewController: UIViewController, UICollectionViewDat
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(Reusable.CollectionCell, forIndexPath: indexPath) as! ShowCollectionCellViewController
         
-        cell.loadShow(indexPath.item)
-        
+        loadPopShows()
+        if let series = shows {
+            cell.loadShow(series[indexPath.item])
+        }
         return cell
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        loadPopShows()
         
-        return 50
+        if let series = shows {
+            return series.count
+        }
+        return 0
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-//      return shows.count
+        //if let cell = sender as? UICollectionViewCell, 
+        let indexPath = collView.indexPathForCell(sender as! UICollectionViewCell)
+            let vc = segue.destinationViewController as! SeasonScreenViewController
+            vc.show = shows![indexPath!.row]
+        //}
+        
     }
     
 }

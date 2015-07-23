@@ -17,6 +17,9 @@ private enum Router: URLRequestConvertible {
     
     case Show(String)
     case Episode(String, Int, Int)
+    case PopularShows
+    case Seasons(String)
+    case Episodes(String, Int)
     
     // MARK: URLRequestConvertible
     var URLRequest: NSURLRequest {
@@ -27,6 +30,16 @@ private enum Router: URLRequestConvertible {
         
                 case .Episode(let show, let season, let ep):
                     return ("shows/\(show)/seasons/\(season)/episodes/\(ep)", ["extended": "images,full"], .GET)
+        
+                case .PopularShows:
+                    return ("shows/popular", ["limit": 50, "extended": "images"], .GET)
+        
+                case .Seasons(let id):
+                    return ("shows/\(id)/seasons", ["extended": "images,full"], .GET)
+                
+                case .Episodes(let show, let season):
+                    return ("shows/\(show)/seasons/\(season)", ["extended": "images,full"], .GET)
+        
             }
         }()
         
@@ -80,6 +93,27 @@ class TraktHTTPClient {
             }
         }
     }
+    
+    private func getJSONVector<T: JSONDecodable>(router: Router, completion: ((Result<[T], NSError?>) -> Void)?) {
+        manager.request(router).validate().responseJSON { (_, _, responseObject, error)  in
+            
+            if let json = responseObject as? [NSDictionary] {
+                
+                var aux: [T] = []
+                for x in json{
+                    if let value = T.decode(x) {
+                        aux.append(value)
+                    } else {
+                        completion?(Result.failure(nil))
+                    }
+                }
+                completion?(Result.success(aux))
+            } else {
+                completion?(Result.failure(error))
+            }
+        }
+    }
+    
             
     func getShow(id: String, completion: ((Result<Show, NSError?>) -> Void)?) {
         getJSONElement(Router.Show(id), completion: completion)
@@ -91,11 +125,17 @@ class TraktHTTPClient {
         getJSONElement(router, completion: completion)
     }
             
+    func getPopularShows(completion: ((Result<[Show], NSError?>) -> Void)?) {
+        getJSONVector(Router.PopularShows, completion: completion)
+    }
             
+    func getSeasons(showId: String, completion: ((Result<[Season], NSError?>) -> Void)?) {
+        getJSONVector(Router.Seasons(showId), completion: completion)
+    }
             
-            
-            
-            
+    func getEpisodes(showId: String, season: Int, completion: ((Result<[Episode], NSError?>) -> Void)?) {
+        getJSONVector(Router.Episodes(showId, season), completion: completion)
+    }
             
 //
 //    func getShow(id: String, completion: ((Result<Show, NSError?>) -> Void)?) {

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import TraktModels
 
 class ShowCollectionCellViewController: UICollectionViewCell {
     
@@ -19,14 +20,15 @@ class ShowCollectionCellViewController: UICollectionViewCell {
         // Initialization code
     }
     
-    func loadShow(index: Int) {
-        let formatter = NSNumberFormatter()
-        formatter.minimumIntegerDigits = 2
-        
-        if let number = formatter.stringFromNumber(index + 1) {
-            showName.text = "Show " + number
-        }
-        
+    func loadShow(show: Show) {
+//        let formatter = NSNumberFormatter()
+//        formatter.minimumIntegerDigits = 2
+//        
+//        if let number = formatter.stringFromNumber(index + 1) {
+//            showName.text = "Show " + number
+//        }
+        showName.text = show.title
         imageName.image = UIImage(named: "poster")
     }
+    
 }

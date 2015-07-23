@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import TraktModels
 
 class EpisodeCellViewController: UITableViewCell {
     
@@ -19,13 +20,13 @@ class EpisodeCellViewController: UITableViewCell {
         // Initialization code
     }
     
-    func loadEp(ep: OldEpisode) {
+    func loadEp(ep: Episode) {
         let formatter = NSNumberFormatter()
         formatter.minimumIntegerDigits = 2
         
         if let number = formatter.stringFromNumber(ep.number) {
             epNumb.text = "S01E" + number
         }
-        epTitle.text = ep.name
+        epTitle.text = ep.title
     }
 }

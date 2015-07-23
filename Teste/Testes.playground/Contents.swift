@@ -96,3 +96,35 @@ func convertDicInVec(dic: NSDictionary?) -> [Entry]? {
 
 let dict = readDataFromJSON()
 let entries = convertDicInVec(dict)
+
+
+
+
+
+
+
+
+
+
+
+func g(x: Int, y: Int) -> Int {
+    return x + y
+}
+
+
+func f(x: Int) -> Int {
+    return 2 * x
+}
+
+var vec = [1,2,3,4,5]
+var dob = vec.map(f)
+
+var ini = 5
+var red = vec.reduce(ini, g)
+
+
+
+
+
+
+
