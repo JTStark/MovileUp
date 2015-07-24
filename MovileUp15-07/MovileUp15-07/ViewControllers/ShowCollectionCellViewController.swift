@@ -8,12 +8,15 @@
 
 import UIKit
 import TraktModels
+import Kingfisher
 
 class ShowCollectionCellViewController: UICollectionViewCell {
     
     @IBOutlet weak var imageName: UIImageView!
     
     @IBOutlet weak var showName: UILabel!
+    
+    private var task: RetrieveImageTask?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,8 +30,23 @@ class ShowCollectionCellViewController: UICollectionViewCell {
 //        if let number = formatter.stringFromNumber(index + 1) {
 //            showName.text = "Show " + number
 //        }
+//        imageName.image = UIImage(named: "poster")
+        
         showName.text = show.title
-        imageName.image = UIImage(named: "poster")
+        
+        let placeholder = UIImage(named: "poster")
+        if let url = show.poster?.fullImageURL ?? show.poster?.mediumImageURL ?? show.poster?.thumbImageURL {
+            task = imageName.kf_setImageWithURL(url, placeholderImage: placeholder)
+        } else {
+            imageName.image = placeholder
+        }
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        task?.cancel()
+        task = nil
+        imageName.image = nil
+    }
+
 }

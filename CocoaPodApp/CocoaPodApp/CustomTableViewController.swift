@@ -39,13 +39,13 @@ class CustomTableViewController: UIViewController, UITableViewDataSource, UITabl
         
         return entries!.count
     }
-    
-    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
-        
-        var deselectedCell = tableView.cellForRowAtIndexPath(indexPath)!
-        deselectedCell.backgroundColor = UIColor.clearColor()
-        
-    }
+//    
+//    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+//        
+//        var deselectedCell = tableView.cellForRowAtIndexPath(indexPath)!
+//        deselectedCell.backgroundColor = UIColor.clearColor()
+//        
+//    }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         

@@ -43,7 +43,6 @@ class ShowsCollectionScreenViewController: UIViewController, UICollectionViewDat
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(Reusable.CollectionCell, forIndexPath: indexPath) as! ShowCollectionCellViewController
         
-        loadPopShows()
         if let series = shows {
             cell.loadShow(series[indexPath.item])
         }
@@ -51,7 +50,6 @@ class ShowsCollectionScreenViewController: UIViewController, UICollectionViewDat
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        loadPopShows()
         
         if let series = shows {
             return series.count
@@ -61,12 +59,16 @@ class ShowsCollectionScreenViewController: UIViewController, UICollectionViewDat
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        //if let cell = sender as? UICollectionViewCell, 
-        let indexPath = collView.indexPathForCell(sender as! UICollectionViewCell)
+        if let cell = sender as? UICollectionViewCell, indexPath = collView.indexPathForCell(sender as! UICollectionViewCell) {
             let vc = segue.destinationViewController as! SeasonScreenViewController
-            vc.show = shows![indexPath!.row]
-        //}
+            vc.show = shows![indexPath.row]
+        }
         
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        loadPopShows()
     }
     
 }
