@@ -97,20 +97,27 @@ class TraktHTTPClient {
     private func getJSONVector<T: JSONDecodable>(router: Router, completion: ((Result<[T], NSError?>) -> Void)?) {
         manager.request(router).validate().responseJSON { (_, _, responseObject, error)  in
             
-            if let json = responseObject as? [NSDictionary] {
-                
-                var aux: [T] = []
-                for x in json{
-                    if let value = T.decode(x) {
-                        aux.append(value)
-                    } else {
-                        completion?(Result.failure(nil))
-                    }
-                }
-                completion?(Result.success(aux))
+            if let jsonArray = responseObject as? [NSDictionary] {
+                let values = jsonArray.map { T.decode($0) }.filter { $0 != nil }.map { $0! }
+                completion?(Result.success(values))
             } else {
                 completion?(Result.failure(error))
             }
+            
+//            if let json = responseObject as? [NSDictionary] {
+//                
+//                var aux: [T] = []
+//                for x in json{
+//                    if let value = T.decode(x) {
+//                        aux.append(value)
+//                    } else {
+//                        completion?(Result.failure(nil))
+//                    }
+//                }
+//                completion?(Result.success(aux))
+//            } else {
+//                completion?(Result.failure(error))
+//            }
         }
     }
     
