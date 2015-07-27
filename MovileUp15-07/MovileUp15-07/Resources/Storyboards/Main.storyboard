@@ -93,7 +93,7 @@
                                         <connections>
                                             <outlet property="imageName" destination="doj-jg-RLW" id="pUp-Bp-U1b"/>
                                             <outlet property="showName" destination="m91-lT-5Ym" id="4NL-0N-MQ9"/>
-                                            <segue destination="Yf0-4I-f1b" kind="show" id="YUa-ps-bVh"/>
+                                            <segue destination="KuT-oe-ths" kind="show" id="Rb1-z6-muk"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -120,7 +120,158 @@
             </objects>
             <point key="canvasLocation" x="546" y="383"/>
         </scene>
-        <!--Season 01-->
+        <!--Show-->
+        <scene sceneID="zz6-GT-g0n">
+            <objects>
+                <viewController title="Show" id="KuT-oe-ths" customClass="ShowViewController" customModule="MovileUp15_07" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PtW-TP-Vof"/>
+                        <viewControllerLayoutGuide type="bottom" id="tkr-ye-zyO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TJZ-aF-4IG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="110" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="LU2-iQ-fpW">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="SeasonCell" id="p3j-pV-jSd" customClass="SeasonViewCell" customModule="MovileUp15_07" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="p3j-pV-jSd" id="fIJ-zl-fSr">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AQ7-MF-lYb">
+                                                    <rect key="frame" x="13" y="10" width="60" height="90"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="691-aH-bZR"/>
+                                                        <constraint firstAttribute="height" constant="90" id="wd8-Jw-Zbt"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Season X" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8yk-5h-65g">
+                                                    <rect key="frame" x="83" y="10" width="70" height="19.5"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
+                                                    <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X episodes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhD-tN-A4x">
+                                                    <rect key="frame" x="83" y="40" width="76" height="19"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                                    <color key="textColor" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lP8-o8-28n" customClass="BorderedView" customModule="BorderedView">
+                                                    <rect key="frame" x="83" y="71" width="193" height="28"/>
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MRR-lH-98T" customClass="FloatRatingView" customModule="FloatRatingView">
+                                                            <rect key="frame" x="10" y="6" width="145" height="18"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="star-gray"/>
+                                                                <userDefinedRuntimeAttribute type="image" keyPath="fullImage" value="star-yellow"/>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="minRating">
+                                                                    <integer key="value" value="0"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="maxRating">
+                                                                    <integer key="value" value="10"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="editable" value="NO"/>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </view>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0uF-bn-yXb">
+                                                            <rect key="frame" x="158" y="6" width="30" height="17"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
+                                                            <color key="textColor" red="0.95686274509803915" green="0.50196078431372548" blue="0.21568627450980393" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="0uF-bn-yXb" firstAttribute="top" secondItem="lP8-o8-28n" secondAttribute="top" constant="5" id="36D-vY-XhL"/>
+                                                        <constraint firstItem="0uF-bn-yXb" firstAttribute="leading" secondItem="MRR-lH-98T" secondAttribute="trailing" constant="3" id="3iG-tX-v8P"/>
+                                                        <constraint firstAttribute="trailing" secondItem="0uF-bn-yXb" secondAttribute="trailing" constant="5" id="7Ao-Dr-IMF"/>
+                                                        <constraint firstAttribute="bottom" secondItem="0uF-bn-yXb" secondAttribute="bottom" constant="5" id="ExS-XM-Eia"/>
+                                                        <constraint firstAttribute="bottom" secondItem="MRR-lH-98T" secondAttribute="bottom" constant="4" id="HFO-dx-RUX"/>
+                                                        <constraint firstItem="MRR-lH-98T" firstAttribute="top" secondItem="lP8-o8-28n" secondAttribute="top" constant="6" id="VP8-wr-mfb"/>
+                                                        <constraint firstItem="0uF-bn-yXb" firstAttribute="centerY" secondItem="MRR-lH-98T" secondAttribute="centerY" id="bZB-3M-qjg"/>
+                                                        <constraint firstAttribute="height" constant="56" id="ede-t3-fF4"/>
+                                                        <constraint firstAttribute="width" constant="193" id="lLd-GW-g4g"/>
+                                                        <constraint firstAttribute="trailing" secondItem="MRR-lH-98T" secondAttribute="trailing" constant="38" id="m4H-L6-HFr"/>
+                                                        <constraint firstItem="MRR-lH-98T" firstAttribute="leading" secondItem="lP8-o8-28n" secondAttribute="leading" constant="10" id="t5c-IX-BpH"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderRadius">
+                                                            <real key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                            <color key="value" red="0.86274509803921573" green="0.86274509803921573" blue="0.86274509803921573" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="ede-t3-fF4"/>
+                                                            <exclude reference="36D-vY-XhL"/>
+                                                            <exclude reference="ExS-XM-Eia"/>
+                                                        </mask>
+                                                    </variation>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="8yk-5h-65g" firstAttribute="top" secondItem="fIJ-zl-fSr" secondAttribute="top" constant="10" id="4UF-uO-F3i"/>
+                                                <constraint firstItem="fhD-tN-A4x" firstAttribute="leading" secondItem="AQ7-MF-lYb" secondAttribute="trailing" constant="10" id="92w-or-bLl"/>
+                                                <constraint firstAttribute="bottom" secondItem="lP8-o8-28n" secondAttribute="bottom" constant="10" id="9vj-SM-lz5"/>
+                                                <constraint firstItem="8yk-5h-65g" firstAttribute="leading" secondItem="AQ7-MF-lYb" secondAttribute="trailing" constant="10" id="Isn-Is-U8N"/>
+                                                <constraint firstAttribute="bottom" secondItem="lP8-o8-28n" secondAttribute="bottom" constant="10" id="Qaa-Sh-d4C"/>
+                                                <constraint firstItem="lP8-o8-28n" firstAttribute="top" secondItem="fhD-tN-A4x" secondAttribute="bottom" constant="12" id="SmE-gr-MOG"/>
+                                                <constraint firstItem="AQ7-MF-lYb" firstAttribute="leading" secondItem="fIJ-zl-fSr" secondAttribute="leading" constant="13" id="V8d-Nb-dnC"/>
+                                                <constraint firstItem="fhD-tN-A4x" firstAttribute="top" secondItem="8yk-5h-65g" secondAttribute="bottom" constant="11" id="dIN-md-ogg"/>
+                                                <constraint firstItem="AQ7-MF-lYb" firstAttribute="top" secondItem="fIJ-zl-fSr" secondAttribute="top" constant="10" id="gVI-qR-QbU"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="8yk-5h-65g" secondAttribute="trailing" id="i5Q-xX-QqZ"/>
+                                                <constraint firstItem="lP8-o8-28n" firstAttribute="leading" secondItem="AQ7-MF-lYb" secondAttribute="trailing" constant="10" id="ovg-fA-Cvy"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="9vj-SM-lz5"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="numberOfEpisodes" destination="fhD-tN-A4x" id="JpC-rW-paJ"/>
+                                            <outlet property="ratingLabel" destination="0uF-bn-yXb" id="vF4-1W-xIQ"/>
+                                            <outlet property="ratingView" destination="MRR-lH-98T" id="pH1-et-2C1"/>
+                                            <outlet property="seasonName" destination="8yk-5h-65g" id="oMY-NM-gsf"/>
+                                            <outlet property="seasonPoster" destination="AQ7-MF-lYb" id="slE-CI-XJ9"/>
+                                            <segue destination="Yf0-4I-f1b" kind="show" id="U1A-QT-l0E"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="KuT-oe-ths" id="Pp0-Z4-5Oc"/>
+                                    <outlet property="delegate" destination="KuT-oe-ths" id="9A4-5a-3rl"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="LU2-iQ-fpW" firstAttribute="top" secondItem="TJZ-aF-4IG" secondAttribute="top" id="7Pf-NZ-tQ5"/>
+                            <constraint firstItem="LU2-iQ-fpW" firstAttribute="leading" secondItem="TJZ-aF-4IG" secondAttribute="leading" id="mT4-qY-av8"/>
+                            <constraint firstAttribute="trailing" secondItem="LU2-iQ-fpW" secondAttribute="trailing" id="nt3-i2-HRI"/>
+                            <constraint firstItem="tkr-ye-zyO" firstAttribute="top" secondItem="LU2-iQ-fpW" secondAttribute="bottom" id="u48-hZ-nJJ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="LU2-iQ-fpW" id="hLW-na-Xrc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kuI-BH-fdE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1032" y="383"/>
+        </scene>
+        <!--Season ##-->
         <scene sceneID="0rD-Kj-nvO">
             <objects>
                 <viewController id="Yf0-4I-f1b" customClass="SeasonScreenViewController" customModule="MovileUp15_07" customModuleProvider="target" sceneMemberID="viewController">
@@ -136,7 +287,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="hE9-EZ-aKn" detailTextLabel="NPa-ux-lvm" style="IBUITableViewCellStyleSubtitle" id="e9Y-Xc-Ean" customClass="EpisodeCellViewController" customModule="MovileUp15_07" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="hE9-EZ-aKn" detailTextLabel="NPa-ux-lvm" style="IBUITableViewCellStyleSubtitle" id="e9Y-Xc-Ean" customClass="EpisodeViewCell" customModule="MovileUp15_07" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="e9Y-Xc-Ean" id="6Dl-p5-GPv">
@@ -177,7 +328,7 @@
                             <constraint firstAttribute="trailing" secondItem="nAW-gU-N6t" secondAttribute="trailing" id="xAr-3N-u1q"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Season 01" id="fUg-In-cUd">
+                    <navigationItem key="navigationItem" title="Season ##" id="fUg-In-cUd">
                         <barButtonItem key="backBarButtonItem" id="SS0-B1-Ij1"/>
                     </navigationItem>
                     <connections>
@@ -186,7 +337,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hbl-RS-7rc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1011" y="383"/>
+            <point key="canvasLocation" x="1507" y="383"/>
         </scene>
         <!--Episode ##-->
         <scene sceneID="K9V-XM-f6b">
@@ -254,6 +405,9 @@
                         <barButtonItem key="backBarButtonItem" title="Season 1" id="F90-ln-oLl"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="action" id="mLN-0k-Jg1">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="shareButton:" destination="XSN-Bt-b6x" id="du2-fr-mjV"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -264,11 +418,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SPI-zK-a1m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1451" y="383"/>
+            <point key="canvasLocation" x="1962" y="383"/>
         </scene>
     </scenes>
     <resources>
         <image name="bg" width="320" height="200"/>
         <image name="bg-overlay" width="320" height="200"/>
+        <image name="star-gray" width="10" height="10"/>
+        <image name="star-yellow" width="10" height="10"/>
     </resources>
 </document>

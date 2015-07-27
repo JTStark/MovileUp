@@ -60,7 +60,7 @@ class ShowsCollectionScreenViewController: UIViewController, UICollectionViewDat
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if let cell = sender as? UICollectionViewCell, indexPath = collView.indexPathForCell(sender as! UICollectionViewCell) {
-            let vc = segue.destinationViewController as! SeasonScreenViewController
+            let vc = segue.destinationViewController as! ShowViewController
             vc.show = shows![indexPath.row]
         }
         

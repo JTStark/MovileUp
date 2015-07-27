@@ -199,6 +199,38 @@ extension ShowsCollectionScreenViewController {
 }
 
 
+//MARK: - ShowViewController
+extension ShowViewController { 
+
+    enum Reusable: String, Printable, ReusableViewProtocol {
+        case SeasonCell = "SeasonCell"
+
+        var kind: ReusableKind? {
+            switch (self) {
+            case SeasonCell:
+                return ReusableKind(rawValue: "tableViewCell")
+            default:
+                preconditionFailure("Invalid value")
+                break
+            }
+        }
+
+        var viewType: UIView.Type? {
+            switch (self) {
+            case SeasonCell:
+                return SeasonViewCell.self
+            default:
+                return nil
+            }
+        }
+
+        var identifier: String? { return self.description } 
+        var description: String { return self.rawValue }
+    }
+
+}
+
+
 //MARK: - SeasonScreenViewController
 extension SeasonScreenViewController { 
 
@@ -218,7 +250,7 @@ extension SeasonScreenViewController {
         var viewType: UIView.Type? {
             switch (self) {
             case Cell:
-                return EpisodeCellViewController.self
+                return EpisodeViewCell.self
             default:
                 return nil
             }

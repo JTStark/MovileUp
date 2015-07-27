@@ -14,15 +14,17 @@ class SeasonScreenViewController: UIViewController, UITableViewDataSource, UITab
     //let eps = OldEpisode.allEpisodes()
     private let httpClient = TraktHTTPClient()
     var episodes: [Episode]?
+    var season: Season!
     var show: Show!
     
     @IBOutlet weak var tableView: UITableView!
     
     func loadEpisodes(){
-        httpClient.getEpisodes(show!.identifiers.slug!, season: 1) { [weak self] result in
+        httpClient.getEpisodes(show.identifiers.slug!, season: season.number) { [weak self] result in
             if let eps = result.value {
                 self?.episodes = eps
                 self?.tableView.reloadData()
+                self?.title = "Season \((self?.season.number)!)"
             } else {
                 println("oops \(result.error)")
             }
@@ -37,7 +39,7 @@ class SeasonScreenViewController: UIViewController, UITableViewDataSource, UITab
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(Reusable.Cell.identifier!, forIndexPath: indexPath) as! EpisodeCellViewController
+        let cell = tableView.dequeueReusableCellWithIdentifier(Reusable.Cell.identifier!, forIndexPath: indexPath) as! EpisodeViewCell
         
         if let eps = episodes {
             cell.loadEp(eps[indexPath.row])

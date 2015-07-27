@@ -14,13 +14,14 @@
 		813AFF0C1B5844FA00FA55F3 /* EpisodeCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813AFF0B1B5844FA00FA55F3 /* EpisodeCellViewController.swift */; };
 		813AFF0E1B58483B00FA55F3 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813AFF0D1B58483B00FA55F3 /* Episode.swift */; };
 		814757341B600D41005A972A /* TraktHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814757331B600D41005A972A /* TraktHTTPClient.swift */; };
+		814BB4531B66A99C00100F1F /* ShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814BB4521B66A99C00100F1F /* ShowViewController.swift */; };
+		814BB4551B66ABCD00100F1F /* SeasonCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814BB4541B66ABCD00100F1F /* SeasonCellViewController.swift */; };
 		814C6BFF1B56EA3E002C8262 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814C6BFE1B56EA3E002C8262 /* CustomNavigationController.swift */; };
 		8150CA921B597F1400965AA5 /* ShowsCollectionScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8150CA911B597F1400965AA5 /* ShowsCollectionScreenViewController.swift */; };
 		8150CA941B59833E00965AA5 /* Show.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8150CA931B59833E00965AA5 /* Show.swift */; };
 		81994F821B5990B7002005D5 /* ShowCollectionCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81994F811B5990B7002005D5 /* ShowCollectionCellViewController.swift */; };
 		81B4465E1586570269330728 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B4CECB7F4AEA98FC0140424 /* Images.xcassets */; };
 		81C4444F1B5830AF00C6271B /* EpisodeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C4444E1B5830AF00C6271B /* EpisodeScreenViewController.swift */; };
-		81F38F161B62D93F00479453 /* ShareButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F38F151B62D93F00479453 /* ShareButtonViewController.swift */; };
 		97AE7B29754FDA46B625F4F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EC83009BDE7BA089D84777A /* Foundation.framework */; };
 		AFDDAC57697F3BFFF7A5385C /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A93B249928A9EFB0941B076 /* Storyboards.swift */; };
 		CE953DB4D673FA02BC2346FD /* Main.storyboard in Sources */ = {isa = PBXBuildFile; fileRef = C4613BA2DBADE308E2984CC4 /* Main.storyboard */; };
@@ -51,12 +52,13 @@
 		813AFF0B1B5844FA00FA55F3 /* EpisodeCellViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpisodeCellViewController.swift; sourceTree = "<group>"; };
 		813AFF0D1B58483B00FA55F3 /* Episode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
 		814757331B600D41005A972A /* TraktHTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TraktHTTPClient.swift; sourceTree = "<group>"; };
+		814BB4521B66A99C00100F1F /* ShowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowViewController.swift; sourceTree = "<group>"; };
+		814BB4541B66ABCD00100F1F /* SeasonCellViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeasonCellViewController.swift; sourceTree = "<group>"; };
 		814C6BFE1B56EA3E002C8262 /* CustomNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		8150CA911B597F1400965AA5 /* ShowsCollectionScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowsCollectionScreenViewController.swift; sourceTree = "<group>"; };
 		8150CA931B59833E00965AA5 /* Show.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Show.swift; sourceTree = "<group>"; };
 		81994F811B5990B7002005D5 /* ShowCollectionCellViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowCollectionCellViewController.swift; sourceTree = "<group>"; };
 		81C4444E1B5830AF00C6271B /* EpisodeScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpisodeScreenViewController.swift; sourceTree = "<group>"; };
-		81F38F151B62D93F00479453 /* ShareButtonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareButtonViewController.swift; sourceTree = "<group>"; };
 		8B4CECB7F4AEA98FC0140424 /* Images.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9A93B249928A9EFB0941B076 /* Storyboards.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
 		B71FB05A8A51F60852B93D4E /* MovileUp15-07.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MovileUp15-07.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -215,7 +217,8 @@
 				813AFF0B1B5844FA00FA55F3 /* EpisodeCellViewController.swift */,
 				8150CA911B597F1400965AA5 /* ShowsCollectionScreenViewController.swift */,
 				81994F811B5990B7002005D5 /* ShowCollectionCellViewController.swift */,
-				81F38F151B62D93F00479453 /* ShareButtonViewController.swift */,
+				814BB4521B66A99C00100F1F /* ShowViewController.swift */,
+				814BB4541B66ABCD00100F1F /* SeasonCellViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -508,12 +511,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				814757341B600D41005A972A /* TraktHTTPClient.swift in Sources */,
+				814BB4551B66ABCD00100F1F /* SeasonCellViewController.swift in Sources */,
 				81C4444F1B5830AF00C6271B /* EpisodeScreenViewController.swift in Sources */,
 				FE541B67354EC4510091E921 /* AppDelegate.swift in Sources */,
 				813AFF0C1B5844FA00FA55F3 /* EpisodeCellViewController.swift in Sources */,
 				814C6BFF1B56EA3E002C8262 /* CustomNavigationController.swift in Sources */,
+				814BB4531B66A99C00100F1F /* ShowViewController.swift in Sources */,
 				AFDDAC57697F3BFFF7A5385C /* Storyboards.swift in Sources */,
-				81F38F161B62D93F00479453 /* ShareButtonViewController.swift in Sources */,
 				8150CA921B597F1400965AA5 /* ShowsCollectionScreenViewController.swift in Sources */,
 				CE953DB4D673FA02BC2346FD /* Main.storyboard in Sources */,
 				813AFF0A1B58361400FA55F3 /* SeasonScreenViewController.swift in Sources */,

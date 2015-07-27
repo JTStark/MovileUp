@@ -55,4 +55,19 @@ class EpisodeScreenViewController: UIViewController {
         overviewTextView.textContainerInset = UIEdgeInsetsZero
     }
     
+    @IBAction func shareButton(sender: AnyObject) {
+        let formatter = NSNumberFormatter()
+        formatter.minimumIntegerDigits = 2
+        
+        let textToShare = "I'm watching \(show.title) S\(formatter.stringFromNumber(episode.seasonNumber))E\(formatter.stringFromNumber(episode.number)), right now, and it's pretty awesome!"
+        
+        if let epLink = NSURL(string: "http://www.trakt.tv/shows/\(show.identifiers.slug!)/seasons/\(episode.seasonNumber)/episodes/\(episode.number)") {
+            
+            let objectsToShare = [textToShare, epLink]
+            let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+            
+            self.presentViewController(activityVC, animated: true, completion: nil)
+        }
+    }
+    
 }

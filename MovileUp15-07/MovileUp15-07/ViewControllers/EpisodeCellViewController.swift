@@ -9,7 +9,7 @@
 import UIKit
 import TraktModels
 
-class EpisodeCellViewController: UITableViewCell {
+class EpisodeViewCell: UITableViewCell {
     
     @IBOutlet private weak var epNumb: UILabel!
     
