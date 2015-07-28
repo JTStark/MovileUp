@@ -12,13 +12,26 @@ import TraktModels
 class ShowsCollectionScreenViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     private let httpClient = TraktHTTPClient()
+    private let favMan = FavoritesManager()
     private var shows: [Show]?
+    
+    @IBOutlet weak var segView: UISegmentedControl!
     
     @IBOutlet weak var collView: UICollectionView!
     
     func loadPopShows(){
         httpClient.getPopularShows { [weak self] result in
             if let series = result.value {
+                self?.shows = series
+                self?.collView.reloadData()
+            }
+        }
+    }
+    
+    func loadFavShows() {
+        httpClient.getPopularShows { [weak self] result in
+            var favs = self?.favMan.favoritesIdentifiers
+            if let series = result.value?.filter({ favs!.contains($0.identifiers.trakt) }) {
                 self?.shows = series
                 self?.collView.reloadData()
             }
@@ -69,6 +82,18 @@ class ShowsCollectionScreenViewController: UIViewController, UICollectionViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
         loadPopShows()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.navigationBar.hideBottomHairline()
+    }
+    
+    @IBAction func changeShows(sender: AnyObject) {
+        if segView.selectedSegmentIndex == 0 {
+            loadPopShows()
+        } else {
+            loadFavShows()
+        }
     }
     
 }

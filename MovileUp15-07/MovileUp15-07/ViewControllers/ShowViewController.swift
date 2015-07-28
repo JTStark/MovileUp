@@ -8,15 +8,21 @@
 
 import UIKit
 import TraktModels
+import Kingfisher
 
 
 class ShowViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     private let httpClient = TraktHTTPClient()
+    private let favMan = FavoritesManager()
     var seasons: [Season]?
     var show: Show!
     
     @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var showBG: UIImageView!
+    
+    @IBOutlet weak var likeButton: UIButton!
     
     func loadSeasons(){
         httpClient.getSeasons(show.identifiers.slug!) { [weak self] result in
@@ -25,6 +31,14 @@ class ShowViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 self?.seasons?.sort({ $0.number > $1.number })
                 self?.tableView.reloadData()
                 self?.title = self?.show.title
+                
+                let standBg = UIImage(named: "bg")
+                if let url = self?.show.thumbImageURL ?? self?.show.logoImageURL ?? self?.show.clearArtImageURL {
+                    self?.showBG.kf_setImageWithURL(url, placeholderImage: standBg)
+                } else {
+                    self?.showBG.image = standBg
+                }
+                
             } else {
                 println("oops \(result.error)")
             }
@@ -61,6 +75,20 @@ class ShowViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         loadSeasons()
+        
+        let favs = favMan.favoritesIdentifiers
+        let id = show.identifiers.trakt
+        
+        if favs.contains(id) {
+            likeButton.selected = true
+        } else {
+            likeButton.selected = false
+        }
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.navigationBar.showBottomHairline()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -72,4 +100,22 @@ class ShowViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         
     }
+    
+    @IBAction func like(sender: AnyObject) {
+        let favs = favMan.favoritesIdentifiers
+        let id = show.identifiers.trakt
+        
+        if favs.contains(id) {
+            
+            favMan.removeIdentifier(id)
+            likeButton.selected = false
+            
+        } else {
+            
+            favMan.addIdentifier(id)
+            likeButton.selected = true
+            
+        }
+    }
+    
 }
