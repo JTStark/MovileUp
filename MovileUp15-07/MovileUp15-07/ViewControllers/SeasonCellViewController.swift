@@ -60,4 +60,7 @@ class SeasonViewCell: UITableViewCell {
         seasonPoster.image = nil
     }
     
+    deinit {
+        println("\(self.dynamicType) deinit")
+    }
 }

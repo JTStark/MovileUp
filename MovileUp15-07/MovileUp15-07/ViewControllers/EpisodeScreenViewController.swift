@@ -70,4 +70,8 @@ class EpisodeScreenViewController: UIViewController {
         }
     }
     
+    deinit {
+        println("\(self.dynamicType) deinit")
+    }
+    
 }

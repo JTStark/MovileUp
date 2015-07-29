@@ -14,6 +14,9 @@ class ShowsCollectionScreenViewController: UIViewController, UICollectionViewDat
     private let httpClient = TraktHTTPClient()
     private let favMan = FavoritesManager()
     private var shows: [Show]?
+    private let notificationCenter = NSNotificationCenter.defaultCenter()
+    private let name = FavoritesManager.favoritesChangedNotificationName
+    private var page = 1
     
     @IBOutlet weak var segView: UISegmentedControl!
     
@@ -29,13 +32,16 @@ class ShowsCollectionScreenViewController: UIViewController, UICollectionViewDat
     }
     
     func loadFavShows() {
+        var favs = favMan.favoritesIdentifiers
+        
         httpClient.getPopularShows { [weak self] result in
-            var favs = self?.favMan.favoritesIdentifiers
-            if let series = result.value?.filter({ favs!.contains($0.identifiers.trakt) }) {
+            if let series = result.value?.filter({ favs.contains($0.identifiers.trakt) }) {
                 self?.shows = series
                 self?.collView.reloadData()
             }
+            
         }
+        
     }
     
     func collectionView(collectionView: UICollectionView,
@@ -79,14 +85,42 @@ class ShowsCollectionScreenViewController: UIViewController, UICollectionViewDat
         
     }
     
+    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+        if segView.selectedSegmentIndex == 0 {
+            httpClient.getMorePopShows(++page, completion: { [weak self] result in
+                if let series = result.value {
+                    if let aux = self?.shows {
+                        self?.shows = aux + series
+                    } else {
+                        self?.shows = series
+                    }
+                    self?.collView.reloadData()
+                }
+            })
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loadPopShows()
+        
+        notificationCenter.addObserver(self, selector: "favoritesChanged", name: name, object: nil)
+    }
+    
+    deinit {
+        notificationCenter.removeObserver(self, name: name, object: nil)
+        println("\(self.dynamicType) deinit")
     }
     
     override func viewWillAppear(animated: Bool) {
+        page = 1
         self.navigationController?.navigationBar.hideBottomHairline()
     }
+    
+    func favoritesChanged() {
+        changeShows(self)
+    }
+    
     
     @IBAction func changeShows(sender: AnyObject) {
         if segView.selectedSegmentIndex == 0 {

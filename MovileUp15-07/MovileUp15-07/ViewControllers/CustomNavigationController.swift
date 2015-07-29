@@ -14,4 +14,8 @@ class CustomNavigationController: UINavigationController {
     
         return .LightContent
     }
+    
+    deinit {
+        println("\(self.dynamicType) deinit")
+    }
 }

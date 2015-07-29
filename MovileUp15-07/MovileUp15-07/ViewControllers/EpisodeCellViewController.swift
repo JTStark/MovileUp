@@ -29,4 +29,8 @@ class EpisodeViewCell: UITableViewCell {
         }
         epTitle.text = ep.title
     }
+    
+    deinit {
+        println("\(self.dynamicType) deinit")
+    }
 }

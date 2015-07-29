@@ -20,6 +20,8 @@ private enum Router: URLRequestConvertible {
     case PopularShows
     case Seasons(String)
     case Episodes(String, Int)
+    case IncreasePopShows(Int)
+    case AllShows
     
     // MARK: URLRequestConvertible
     var URLRequest: NSURLRequest {
@@ -39,6 +41,12 @@ private enum Router: URLRequestConvertible {
                 
                 case .Episodes(let show, let season):
                     return ("shows/\(show)/seasons/\(season)", ["extended": "images,full"], .GET)
+                
+                case .IncreasePopShows(let page):
+                    return ("shows/popular", ["page": page, "limit": 50, "extended": "images"], .GET)
+                
+                case .AllShows:
+                    return ("shows/popular", ["limit": 100, "extended": "images"], .GET)
         
             }
         }()
@@ -142,6 +150,18 @@ class TraktHTTPClient {
             
     func getEpisodes(showId: String, season: Int, completion: ((Result<[Episode], NSError?>) -> Void)?) {
         getJSONVector(Router.Episodes(showId, season), completion: completion)
+    }
+    
+    func getMorePopShows(times: Int, completion: ((Result<[Show], NSError?>) -> Void)?) {
+        getJSONVector(Router.IncreasePopShows(times), completion: completion)
+    }
+    
+    func getAllShows(completion: ((Result<[Show], NSError?>) -> Void)?){
+        getJSONVector(Router.AllShows, completion: completion)
+    }
+    
+    deinit {
+        println("\(self.dynamicType) deinit")
     }
             
 //

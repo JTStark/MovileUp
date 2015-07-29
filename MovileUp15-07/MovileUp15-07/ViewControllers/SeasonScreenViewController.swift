@@ -24,7 +24,13 @@ class SeasonScreenViewController: UIViewController, UITableViewDataSource, UITab
             if let eps = result.value {
                 self?.episodes = eps
                 self?.tableView.reloadData()
-                self?.title = "Season \((self?.season.number)!)"
+                
+                if self?.season.number != 0 {
+                    self?.title = "Season \((self?.season.number)!)"
+                } else {
+                    self?.title = "Especials"
+                }
+                
             } else {
                 println("oops \(result.error)")
             }
@@ -70,6 +76,10 @@ class SeasonScreenViewController: UIViewController, UITableViewDataSource, UITab
             vc.show = show
         }
         
+    }
+    
+    deinit {
+        println("\(self.dynamicType) deinit")
     }
     
     override func viewDidLoad() {

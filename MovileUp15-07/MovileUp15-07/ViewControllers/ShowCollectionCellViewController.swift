@@ -49,4 +49,7 @@ class ShowCollectionCellViewController: UICollectionViewCell {
         imageName.image = nil
     }
 
+    deinit {
+        println("\(self.dynamicType) deinit")
+    }
 }

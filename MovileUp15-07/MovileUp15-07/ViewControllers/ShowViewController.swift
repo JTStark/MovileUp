@@ -118,4 +118,8 @@ class ShowViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
     }
     
+    deinit {
+        println("\(self.dynamicType) deinit")
+    }
+    
 }
