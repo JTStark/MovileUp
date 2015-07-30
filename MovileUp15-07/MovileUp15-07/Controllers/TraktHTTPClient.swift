@@ -21,7 +21,6 @@ private enum Router: URLRequestConvertible {
     case Seasons(String)
     case Episodes(String, Int)
     case IncreasePopShows(Int)
-    case AllShows
     
     // MARK: URLRequestConvertible
     var URLRequest: NSURLRequest {
@@ -45,9 +44,6 @@ private enum Router: URLRequestConvertible {
                 case .IncreasePopShows(let page):
                     return ("shows/popular", ["page": page, "limit": 50, "extended": "images"], .GET)
                 
-                case .AllShows:
-                    return ("shows/popular", ["limit": 100, "extended": "images"], .GET)
-        
             }
         }()
         
@@ -154,10 +150,6 @@ class TraktHTTPClient {
     
     func getMorePopShows(times: Int, completion: ((Result<[Show], NSError?>) -> Void)?) {
         getJSONVector(Router.IncreasePopShows(times), completion: completion)
-    }
-    
-    func getAllShows(completion: ((Result<[Show], NSError?>) -> Void)?){
-        getJSONVector(Router.AllShows, completion: completion)
     }
     
     deinit {
